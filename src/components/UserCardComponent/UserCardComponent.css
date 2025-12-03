@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.userDiv{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    bottom: 50px;
+}
+
+.userDiv p {
+    width: 100%;
+    font-size: 16px;
+}
+
+.userDiv > img{
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    border: 8px solid;
+}
+
+.dateDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dateDiv > img {
+    width: 20px;
+    height: 20px;
+}
+

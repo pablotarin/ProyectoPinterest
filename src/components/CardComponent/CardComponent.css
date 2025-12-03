@@ -1,0 +1,30 @@
+article {
+  width: 264px;
+  height: fit-content;
+  position: relative;
+}
+
+article > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+}
+
+article > img:hover {
+  filter: brightness(60%);
+}
+
+article:hover > a.visitButton{
+    opacity: 1;
+}
+
+article > a.visitButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}

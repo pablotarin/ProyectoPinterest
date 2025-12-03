@@ -1,0 +1,12 @@
+main {
+  padding: 20px;
+  column-count: 5; /* número de columnas por defecto */
+  column-gap: 10px; /* espacio entre columnas */
+  text-align: center; /* centra las cards cuando hay pocas */
+  column-span: all;
+}
+
+article {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}

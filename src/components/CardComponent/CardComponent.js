@@ -1,16 +1,28 @@
+import { ImageCardComponnent } from "../ImageCardComponent/ImageCardComponent";
+import { UserCardComponent } from "../UserCardComponent/UserCardComponent";
 import "./CardComponent.css";
-import { access_key } from "../../data/accessKey";
 
-export const CardComponent = async () => {
-  const app = document.querySelector("#app");
-  const img = document.createElement("img");
-  const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${access_key}`;
-  const response = await fetch(apiUrl);
-  const data = await response.json();
+export const CardComponent = (photos = []) => {
+  return createPhotosDiv(photos);
+};
 
-  console.log(data);
-  img.src = data.urls.small;
-  img.alt = data.alt_description || "Imagen aleatoria";
+const createPhotosDiv = (photos) => {
+  const main = document.createElement("main");
+  main.classList.add('main')
+  /* const data = await getPhotos(num); */
+  photos.forEach((photo) => {
+    const article = document.createElement("article");
 
-  app.append(img);
+    const img = ImageCardComponnent({src: photo.urls.small, alt: photo.alt_description || "Imagen aleatoria"})
+
+    const user = photo.user;
+    const photoDate = photo.created_at.slice(0, 10);
+
+    const div = UserCardComponent({userPhoto: user.profile_image.large, name: user.name, datePublish: photoDate});
+
+    article.append(img, div);
+    main.append(article);
+  });
+
+  return main;
 };

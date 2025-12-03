@@ -1,0 +1,13 @@
+.visitButton {
+  box-sizing: border-box;
+  background-color: #ff0000;
+  border-radius: 30px;
+  width: 123px;
+  height: 60px;
+  gap: 10px;
+  color: white;
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+}

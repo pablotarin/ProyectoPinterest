@@ -1,1 +1,0 @@
-export const access_key = 'YBYJ7kpuCBcqJm-gOqQIuMfFfSb5vFjMqb_xTaaWRQg';

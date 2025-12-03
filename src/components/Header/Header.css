@@ -9,6 +9,7 @@ header {
   padding: 10px 18px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 18px;
 }
 
@@ -19,7 +20,9 @@ header {
 
 header ul {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 18px;
 }
 
 header .user {
@@ -33,4 +36,7 @@ header .user {
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
