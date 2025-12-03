@@ -15,7 +15,6 @@ const createPhotosDiv = (photos) => {
       const article = document.createElement("article");
 
       const stats = await getStatistics(photo.id);
-      console.log(stats);
 
       const img = ImageCardComponnent({
         src: photo.urls.small,
