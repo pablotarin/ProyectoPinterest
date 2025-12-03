@@ -20,7 +20,7 @@ article:hover > .imgCardDiv > .imgDiv {
   filter: brightness(60%);
 }
 
-article:hover > .imgCardDiv > a.visitButton{
+article:hover > .imgCardDiv > a.visitButton, article:hover .itemStatDiv{
   opacity: 1;
 }
 

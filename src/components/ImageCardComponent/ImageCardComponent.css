@@ -10,3 +10,12 @@
 .imgCardDiv {
   position: relative;
 }
+
+.statsDiv{
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

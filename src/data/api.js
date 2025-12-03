@@ -1,6 +1,5 @@
 import { createApi } from "unsplash-js";
 
-// Si usas Node.js > 18 o navegador
 const unsplash = createApi({
   accessKey: "YBYJ7kpuCBcqJm-gOqQIuMfFfSb5vFjMqb_xTaaWRQg",
 });
@@ -29,7 +28,7 @@ export async function getPhotosByUsername(username) {
       )
 }
 
-/* export async function getStatistics(photoId) {
+export async function getStatistics(photoId) {
   const result = await unsplash.photos.getStats({ photoId });
 
   if (result.response) {
@@ -37,4 +36,4 @@ export async function getPhotosByUsername(username) {
   } else {
     return [];
   }
-} */
+}

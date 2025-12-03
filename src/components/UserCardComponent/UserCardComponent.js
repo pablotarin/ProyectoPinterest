@@ -5,8 +5,6 @@ export const UserCardComponent = ({
   name,
   datePublish = "03/12/2025",
   color = "black",
-  likes = 0,
-  visits = 0,
 }) => {
   const div = document.createElement("div");
   const img = document.createElement("img");
