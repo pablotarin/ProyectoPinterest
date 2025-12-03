@@ -21,9 +21,6 @@ export const UserCardComponent = ({
   img.classList.add("userImg");
   pName.textContent = name;
 
- /*  console.log("Likes: ", likes);
-  console.log("Visitas: ", visits);
- */
   dateImg.src = "src/assets/subido.png";
   dateImg.alt = "Subido";
   pDate.textContent = datePublish;

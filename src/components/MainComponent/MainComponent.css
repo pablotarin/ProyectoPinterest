@@ -10,6 +10,16 @@ article {
   break-inside: avoid;
   page-break-inside: avoid;
 }
+.notFound {
+  font-family: 'Inter';
+  font-size: 36px;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
 @media screen and (max-width: 1439px) {
   .main {
@@ -27,7 +37,7 @@ article {
     height: 75px;
   }
 
- article > .imgCardDiv:hover + .userDiv > .userImg {
+ article:hover .userDiv > .userImg {
     width: 90px;
     height: 90px;
   }

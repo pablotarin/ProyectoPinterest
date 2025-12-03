@@ -16,15 +16,15 @@ article > .imgCardDiv > .imgDiv {
   display: block;
 }
 
-article > .imgCardDiv:hover > .imgDiv{
+article:hover > .imgCardDiv > .imgDiv {
   filter: brightness(60%);
 }
 
-article > .imgCardDiv:hover > a.visitButton{
+article:hover > .imgCardDiv > a.visitButton{
   opacity: 1;
 }
 
-article > .imgCardDiv:hover + .userDiv > .userImg {
+article:hover .userDiv > .userImg {
   width: 120px;
   height: 120px;
   border-radius: 60px;

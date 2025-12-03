@@ -19,29 +19,10 @@ export async function getAllPhotos() {
       return result.errors;
     }
   }
-  console.log(allPhotos);
   return allPhotos;
 }
 
 export async function getPhotosByUsername(username) {
-  /* const result = await unsplash.photos.list({
-    page: 1,
-    perPage: 30,
-  });
-
-  if (result.response) {
-    const data = result.response.results;
-    console.log(
-      data.filter((p) =>
-        p.user.name.toLowerCase().includes(username.toLowerCase())
-      )
-    );
-    return data.filter((p) =>
-      p.user.name.toLowerCase().includes(username.toLowerCase())
-    );
-  } else {
-    return [];
-  } */
   const data = await getAllPhotos();
   return data.filter((p) =>
         p.user.name.toLowerCase().includes(username.toLowerCase())

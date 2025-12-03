@@ -8,17 +8,26 @@ export const MainComponent = async () => {
 
   const main = CardComponent(photos);
 
+  const imgPinterest = document.querySelector('.pinterest');
+  imgPinterest.addEventListener('click', () => {
+    renderPhotos(photos);
+  })
+
   const searchBar = document.querySelector("#search");
-  searchBar.addEventListener("input", async () => {
-    const query = searchBar.value.toLowerCase();
-    const data = await getPhotosByUsername(query);
-    renderPhotos(data);
+  searchBar.addEventListener("keydown", async (ev) => {
+    if (ev.key === "Enter") {
+      const query = searchBar.value.toLowerCase();
+      const data = await getPhotosByUsername(query);
+      renderPhotos(data);
+      searchBar.value = "";
+      searchBar.blur();
+    }
   });
 
   app.append(main);
 };
 
-const renderPhotos = (photos) => {
+export const renderPhotos = (photos) => {
   const app = document.querySelector("#app");
   const mainRem = document.querySelector(".main");
   mainRem.remove();
