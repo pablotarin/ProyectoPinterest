@@ -14,14 +14,10 @@ export const ImageCardComponnent = ({ src, alt, dataD, dataV }) => {
   const statsDiv = document.createElement("div");
   statsDiv.classList.add("statsDiv");
   const d = StatsComponent({
-    src: "src/assets/like.png",
-    alt: "likes",
     data: dataD,
     classList: 'uil-download-alt'
   });
   const v = StatsComponent({
-    src: "src/assets/camera.png",
-    alt: "views",
     data: dataV,
     classList: 'uil-eye'
   });

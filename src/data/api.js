@@ -24,16 +24,22 @@ export async function getAllPhotos() {
 export async function getPhotosByUsername(username) {
   const data = await getAllPhotos();
   return data.filter((p) =>
-        p.user.name.toLowerCase().includes(username.toLowerCase())
-      )
+    p.user.name.toLowerCase().includes(username.toLowerCase())
+  );
 }
 
 export async function getStatistics(photoId) {
-  const result = await unsplash.photos.getStats({ photoId });
+  try {
+    const result = await unsplash.photos.getStats({ photoId });
 
-  if (result.response) {
-    return result.response;
-  } else {
+    if (result.response) {
+      return result.response;
+    } else {
+      console.log(`No stats available for photo ${photoId}`);
+      return [];
+    }
+  } catch (error) {
+    console.error(`Error fetching statistics for photo ${photoId}:`, error);
     return [];
   }
 }

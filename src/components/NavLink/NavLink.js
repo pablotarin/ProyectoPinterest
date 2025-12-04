@@ -7,8 +7,9 @@ export const NavLink = ({ path, text }) => {
   li.classList.add("navLink");
   a.href = path;
   a.textContent = text;
+  a.target = '_blank';
 
-  if (path === "/") {
+  if (text === "Inicio") {
     li.classList.add("inicio");
   }
   li.append(a);

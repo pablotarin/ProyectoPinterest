@@ -1,6 +1,6 @@
 import './StatsComponent.css'
 
-export const StatsComponent = ({src, alt, data = '+10000', classList}) => {
+export const StatsComponent = ({data, classList}) => {
     const div = document.createElement('div');
     div.classList.add('itemStatDiv');
     const i = document.createElement('i');

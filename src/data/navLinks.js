@@ -1,14 +1,14 @@
 export const navLinks = [
     {
-        path: '/',
+        path: 'https://es.pinterest.com/',
         text: 'Inicio'
     },
     {
-        path: '/search',
+        path: 'https://es.pinterest.com/ideas',
         text: 'Explorar'
     },
     {
-        path: '/create',
+        path: 'https://create.pinterest.com/es-es/',
         text: 'Crear'
     }
 ]
