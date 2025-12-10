@@ -17,7 +17,7 @@ const createPhotosDiv = (photos) => {
       const stats = await getStatistics(photo.id);
 
       const img = ImageCardComponnent({
-        src: photo.urls.small,
+        src: photo.urls.regular,
         alt: photo.alt_description || "Imagen aleatoria",
         dataD: stats.downloads.historical.change || '-',
         dataV: stats.views.historical.change || '-',

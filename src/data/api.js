@@ -6,7 +6,7 @@ const unsplash = createApi({
 
 export async function getAllPhotos() {
   let allPhotos = [];
-  for (let page = 1; page <= 3; page++) {
+  for (let page = 1; page <= 1; page++) {
     const result = await unsplash.photos.list({
       page: page,
       perPage: 30,
@@ -21,9 +21,9 @@ export async function getAllPhotos() {
   return allPhotos;
 }
 
-export async function getPhotosByUsername(username) {
-  const data = await getAllPhotos();
-  return data.filter((p) =>
+export /* async */ function getPhotosByUsername(photos, username) {
+  /* const data = await getAllPhotos(); */
+  return photos.filter((p) =>
     p.user.name.toLowerCase().includes(username.toLowerCase())
   );
 }
