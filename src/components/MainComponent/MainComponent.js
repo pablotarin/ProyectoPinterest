@@ -14,10 +14,10 @@ export const MainComponent = async () => {
   })
 
   const searchBar = document.querySelector("#search");
-  searchBar.addEventListener("keydown", /* async */ (ev) => {
+  searchBar.addEventListener("keydown", (ev) => {
     if (ev.key === "Enter") {
       const query = searchBar.value.toLowerCase();
-      const data = /* await */ getPhotosByUsername(photos, query);
+      const data = getPhotosByUsername(photos, query);
       renderPhotos(data);
       searchBar.value = "";
       searchBar.blur();

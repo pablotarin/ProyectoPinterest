@@ -22,8 +22,7 @@ export async function getAllPhotos() {
   return allPhotos;
 }
 
-export /* async */ function getPhotosByUsername(photos, username) {
-  /* const data = await getAllPhotos(); */
+export function getPhotosByUsername(photos, username) {
   return photos.filter((p) =>
     p.user.name.toLowerCase().includes(username.toLowerCase())
   );
