@@ -6,6 +6,7 @@ const unsplash = createApi({
 
 export async function getAllPhotos() {
   let allPhotos = [];
+  /* Hecho en bucle por si se quieren pedir más páginas, por restricción en el número de peticiones por hora de Unsplash dejo solo 1 página */
   for (let page = 1; page <= 1; page++) {
     const result = await unsplash.photos.list({
       page: page,
