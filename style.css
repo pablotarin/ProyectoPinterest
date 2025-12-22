@@ -33,3 +33,7 @@
   --avatar-medium: 90px;
   --avatar-large: 120px;
 }
+
+* {
+  box-sizing: border-box;
+}

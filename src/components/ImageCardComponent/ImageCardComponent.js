@@ -1,5 +1,5 @@
 import "./ImageCardComponent.css";
-import { CardButton } from "../CardButton/CardButton";
+import { CardVisitLink } from "../CardVisitLink/CardVisitLink";
 import { StatsComponent } from "../StatsComponent/StatsComponent";
 
 export const ImageCardComponnent = ({ src, alt, dataD, dataV }) => {
@@ -10,18 +10,18 @@ export const ImageCardComponnent = ({ src, alt, dataD, dataV }) => {
   img.classList.add("imgDiv");
 
   div.classList.add("imgCardDiv");
-  const a = CardButton();
+  const a = CardVisitLink("Visitar", "visitButton");
   const statsDiv = document.createElement("div");
   statsDiv.classList.add("statsDiv");
-  const d = StatsComponent({
+  const downloads = StatsComponent({
     data: dataD,
     classList: 'uil-download-alt'
   });
-  const v = StatsComponent({
+  const views = StatsComponent({
     data: dataV,
     classList: 'uil-eye'
   });
-  statsDiv.append(v, d);
+  statsDiv.append(views, downloads);
   div.append(statsDiv, img, a);
 
   return div;

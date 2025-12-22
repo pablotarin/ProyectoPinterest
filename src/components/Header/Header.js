@@ -1,7 +1,4 @@
-import { getAllPhotos } from "../../data/api";
 import { navLinks } from "../../data/navLinks";
-import { CardComponent } from "../CardComponent/CardComponent";
-import { renderPhotos } from "../MainComponent/MainComponent";
 import { NavButton } from "../NavButton/NavButton";
 import { NavLink } from "../NavLink/NavLink";
 import { SearchBar } from "../SearchBar/SearchBar";
