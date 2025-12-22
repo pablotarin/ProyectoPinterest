@@ -19,8 +19,8 @@ const createPhotosDiv = (photos) => {
       const img = ImageCardComponnent({
         src: photo.urls.regular,
         alt: photo.alt_description || "Imagen aleatoria",
-        dataD: stats.downloads.historical.change || '-',
-        dataV: stats.views.historical.change || '-',
+        dataD: stats?.downloads?.historical?.change ?? '-',
+        dataV: stats?.views?.historical?.change ?? '-',
       });
 
       const user = photo.user;

@@ -36,10 +36,16 @@ export async function getStatistics(photoId) {
       return result.response;
     } else {
       console.log(`No stats available for photo ${photoId}`);
-      return [];
+      return {
+        downloads: { historical: { change: "-" } },
+        views: { historical: { change: "-" } },
+      };
     }
   } catch (error) {
     console.error(`Error fetching statistics for photo ${photoId}:`, error);
-    return [];
+    return {
+      downloads: { historical: { change: "-" } },
+      views: { historical: { change: "-" } },
+    };
   }
 }
