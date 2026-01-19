@@ -1,11 +1,11 @@
 import { CardComponent } from "../CardComponent/CardComponent";
-import { getAllPhotos, getPhotosByUsername } from "../../data/api";
+import { firstSearch, getSearchPhotos } from "../../data/api";
 import "./MainComponent.css";
 
 const app = document.querySelector("#app");
 
 export const MainComponent = async () => {
-  const photos = await getAllPhotos();
+  const photos = await firstSearch();
 
   const main = CardComponent(photos);
 
@@ -15,10 +15,10 @@ export const MainComponent = async () => {
   });
 
   const searchBar = document.querySelector("#search");
-  searchBar.addEventListener("keydown", (ev) => {
+  searchBar.addEventListener("keydown", async (ev) => {
     if (ev.key === "Enter") {
       const query = searchBar.value.toLowerCase();
-      const data = getPhotosByUsername(photos, query);
+      const data = await getSearchPhotos(query);
       renderPhotos(data);
       searchBar.value = "";
       searchBar.blur();

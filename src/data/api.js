@@ -4,28 +4,33 @@ const unsplash = createApi({
   accessKey: "YBYJ7kpuCBcqJm-gOqQIuMfFfSb5vFjMqb_xTaaWRQg",
 });
 
-export async function getAllPhotos() {
+export async function firstSearch() {
   let allPhotos = [];
-  /* Hecho en bucle por si se quieren pedir más páginas, por restricción en el número de peticiones por hora de Unsplash dejo solo 1 página */
-  for (let page = 1; page <= 1; page++) {
-    const result = await unsplash.photos.list({
-      page: page,
-      perPage: 30,
-    });
+  const result = await unsplash.photos.list({
+    page: 1,
+    perPage: 30,
+  });
 
-    if (result.response) {
-      allPhotos = allPhotos.concat(result.response.results);
-    } else {
-      return result.errors;
-    }
+  if (result.response) {
+    allPhotos = allPhotos.concat(result.response.results);
+  } else {
+    return result.errors;
   }
   return allPhotos;
 }
 
-export function getPhotosByUsername(photos, username) {
-  return photos.filter((p) =>
-    p.user.name.toLowerCase().includes(username.toLowerCase())
-  );
+export async function getSearchPhotos(query) {
+  let allFilterPhotos = [];
+  const result = await unsplash.search.getPhotos({ query });
+  console.log(result.response);
+  
+  if (result.response) {
+    allFilterPhotos = allFilterPhotos.concat(result.response.results);
+  } else {
+    return result.errors;
+  }
+
+  return allFilterPhotos;
 }
 
 export async function getStatistics(photoId) {
